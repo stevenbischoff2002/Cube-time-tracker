@@ -1,7 +1,9 @@
-
+import scrambleGenerator
 if __name__ == "__main__":
     try:
         #while True:
+        scramble = scrambleGenerator.gen_scramble()
+        print(f"\n{scramble}\n")
             # time = input("---> ")
         time = "0:56.334"
         min = 60 * 1000 * int(time.split(":")[0])
