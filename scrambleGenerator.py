@@ -12,7 +12,7 @@ def gen_scramble():
     cube = scramble(s, slen)
 
     # Format scramble to a string with movecount
-    return ''.join(str(s[x][0]) + str(s[x][1]) + ' ' for x in range(len(s))) + "[" + str(slen) + "]"
+    return ''.join(str(s[x][0]) + str(s[x][1]) + ' ' for x in range(len(s)))# + "[" + str(slen) + "]"
 
 def valid(ar):
     # Check if Move behind or 2 behind is the same as the random move
@@ -24,6 +24,6 @@ def valid(ar):
         while ar[x][0] == ar[x-2][0] or ar[x][0] == ar[x-1][0]:
             ar[x][0] = random.choice(moves)
     return ar
- 
-s = gen_scramble()
-print(s)
+if __name__ == "__main__":
+    s = gen_scramble()
+    print(s)

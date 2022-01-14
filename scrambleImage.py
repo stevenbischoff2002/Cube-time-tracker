@@ -243,7 +243,7 @@ def scramble(scr, len):
         move(cube, str(x[0])+str(x[1]), moves.index(x[0]))
 
     scr = ''.join(str(scr[x][0]) + str(scr[x][1]) + ' ' for x in range(len)) + "[" + str(len) + "]"
-    if('-cv' in sys.argv or cvInstalled == True):
-        cube.image(scr)
-    else:
-        cube.printCube()
+    #if('-cv' in sys.argv or cvInstalled == True):
+    #    cube.image(scr)
+    #else:
+    #    cube.printCube()
