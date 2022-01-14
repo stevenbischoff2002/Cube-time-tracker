@@ -1,2 +1,5 @@
 # Virtual env
 .env
+
+# Database
+db
