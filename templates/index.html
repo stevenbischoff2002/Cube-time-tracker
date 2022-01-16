@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube time tracker</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+    <body>
+        <div>
+            {%for item in db%}
+                <div id="{{item}}" class="solve">
+                    <p class="scramble">{{db[item]["scramble"]}}</p>
+                    <p class="time">{{db[item]["time"]}}</p>
+                </div>
+            {%endfor%}
+        </div>
+    </body>
+
+</html>

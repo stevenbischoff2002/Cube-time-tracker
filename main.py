@@ -1,6 +1,15 @@
 from pydoc import cli
 import scrambleGenerator
 import db_handler
+from flask import Flask, render_template, redirect, url_for
+
+global db
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html",db=db.db)
 
 def cliMain(db):
     run = True
@@ -35,3 +44,5 @@ if(__name__ == "__main__"):
     db = db_handler.DB(dbFile)
     if (mode == "cli"):
         cliMain(db)
+    elif (mode == "web"):
+        app.run("0.0.0.0", port=5000, threaded=True, debug=True)

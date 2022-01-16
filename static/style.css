@@ -1,0 +1,15 @@
+:root {
+    --main-text-color: #e8e6e3;
+    --main-link-color: #59a8cc;
+    --main-background: #27292b;
+}
+body {
+    background-color: var(--main-background);
+    color: var(--main-text-color);
+    font-family: Consolas;
+}
+
+body a {
+    text-decoration: none;
+    color: var(--main-link-color);
+}
