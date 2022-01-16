@@ -6,3 +6,7 @@ db
 
 # pycache
 __pycache__
+
+# test files
+test.*
+*.test
