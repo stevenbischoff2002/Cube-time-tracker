@@ -13,3 +13,22 @@ body a {
     text-decoration: none;
     color: var(--main-link-color);
 }
+
+.wraper {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    background-color: #36393b;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.solve {
+    position: relative;
+    width: 90%;
+    left: calc(5% - 15px);
+    border-radius: 25px;
+    background-color: #443e5a;
+    padding: 10px;
+    margin: 5px;
+}
