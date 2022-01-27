@@ -32,3 +32,14 @@ body a {
     padding: 10px;
     margin: 5px;
 }
+.add_dialog {
+    position: absolute;
+    width: 90%;
+    left: calc(5% - 15px);
+    bottom: 10px;
+    border-radius: 25px;
+    background-color: #443e5a;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
