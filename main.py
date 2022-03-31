@@ -1,15 +1,26 @@
 from pydoc import cli
 import scrambleGenerator
 import db_handler
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, abort, request
 
 global db
 
 app = Flask(__name__)
 
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return redirect("/")
+
 @app.route("/")
 def index():
     return render_template("index.html",db=db.db)
+
+@app.route("/add",methods=["POST","GET"])
+def add():
+    if request.method == "POST":
+        return("test")
+    else:
+        abort(418)
 
 def cliMain(db):
     run = True
