@@ -15,7 +15,7 @@ def method_not_allowed(error):
 def index():
     return render_template("index.html",db=db.db)
 
-@app.route("/add",methods=["POST","GET"])
+@app.route("/add",methods=["POST"])
 def add():
     if request.method == "POST":
         return("test")
