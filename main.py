@@ -1,6 +1,7 @@
 from pydoc import cli
 import scrambleGenerator
 import db_handler
+import json
 from flask import Flask, render_template, redirect, url_for, abort, request
 
 global db
@@ -18,7 +19,10 @@ def index():
 @app.route("/add",methods=["POST"])
 def add():
     if request.method == "POST":
-        return("test")
+        # print(json.load(request.form["scramble"]))
+        time = str(request.form.get("time"))
+        # scramble = str(request.form.get("scramble"))
+        return(time)
     else:
         abort(418)
 
