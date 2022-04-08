@@ -16,15 +16,20 @@ def method_not_allowed(error):
 def index():
     return render_template("index.html",db=db.db)
 
-@app.route("/add",methods=["POST"])
+@app.route("/add",methods=["POST","GET"])
 def add():
     if request.method == "POST":
-        # print(json.load(request.form["scramble"]))
         time = str(request.form.get("time"))
-        # scramble = str(request.form.get("scramble"))
-        return(time)
-    else:
-        abort(418)
+        scramble = str(request.form.get("scramble"))
+        min = 60 * 1000 * int(time.split(":")[0])
+        sec = 1000 * int(time.split(":")[1].split(".")[0])
+        msec = int(time.split(":")[1].split(".")[1])
+        db.addEntry(scramble,(min + sec + msec))
+        # print(f'{scramble},{(min + sec + msec)}')
+        return redirect("/")
+    elif request.method == "GET":
+        scramble = scrambleGenerator.gen_scramble()
+        return render_template("add.html",scramble=scramble)
 
 def cliMain(db):
     run = True
